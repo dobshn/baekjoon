@@ -11,21 +11,21 @@ public class p2042 {
         scanner.nextLine();
 
         // N개의 수를 array에 입력받기
-        int[] numbers = new int[N];
+        long[] numbers = new long[N];
         for (int i = 0; i < N; i++) {
-            numbers[i] = Integer.parseInt(scanner.nextLine());
+            numbers[i] = Long.parseLong(scanner.nextLine()); // 얘도 Long
         }
 
         for (int i = 0; i < M + K; i++) {
             int command = scanner.nextInt();
             if (command == 1) {
                 int index = scanner.nextInt() - 1;
-                int number = scanner.nextInt();
+                long number = scanner.nextLong(); // 얘도 long
                 numbers[index] = number;
             } else if (command == 2){
                 int startIndex = scanner.nextInt() - 1;
                 int endIndex = scanner.nextInt() - 1;
-                int sum = 0;
+                long sum = 0;
                 for (int j = startIndex; j <= endIndex; j++) {
                     sum += numbers[j];
                 }
